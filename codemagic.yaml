@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 60
     instance_type: mac_mini_m1
     environment:
-      node: latest
+      node: 20.x
     triggering:
       events:
         - push
@@ -12,14 +12,16 @@ workflows:
       - name: Install dependencies
         script: | 
           npm install --legacy-peer-deps
+          npm install --save-dev @react-native-community/cli --legacy-peer-deps
       - name: Build Android APK
         script: | 
           # Force generate the main android folder if it's completely missing
           if [ ! -d "android" ]; then
             echo "Main Android directory missing. Generating..."
-            npx expo prebuild --platform android || npx react-native eject || npx react-native android
+            npx expo prebuild --platform android --clean || npx react-native android --no-packager
           fi
           
+          # Navigate into the verified main android directory and build
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
