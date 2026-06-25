@@ -22,9 +22,9 @@ workflows:
             npx expo prebuild --platform android --clean || npx react-native run-android --no-packager
           fi
           
-          # Navigate into the verified main android directory and build
+          # Navigate into the verified main android directory and build production release
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleRelease
     artifacts:
-      - android/app/build/outputs/apk/**/*.apk
+      - android/app/build/outputs/apk/release/*.apk
