@@ -14,13 +14,14 @@ workflows:
           npm install --legacy-peer-deps
       - name: Build Android APK
         script: | 
-          ANDROID_DIR=$(find . -name "gradlew" -exec dirname {} \;)
-          if [ -z "$ANDROID_DIR" ]; then
-            echo "Gradle folder not found. Running pre-build..."
-            npx react-native android || npx expo prebuild
-            ANDROID_DIR=$(find . -name "gradlew" -exec dirname {} \;)
+          # Force generate the main android folder if it's completely missing
+          if [ ! -d "android" ]; then
+            echo "Main Android directory missing. Generating..."
+            npx expo prebuild --platform android || npx react-native eject || npx react-native android
           fi
-          cd "$ANDROID_DIR"
+          
+          cd android
+          chmod +x gradlew
           ./gradlew assembleDebug
     artifacts:
       - android/app/build/outputs/apk/**/*.apk
