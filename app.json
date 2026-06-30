@@ -12,6 +12,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.anonymous.onspaceapp",
       "adaptiveIcon": {
         "foregroundImage": "./myapp.jpg",
         "backgroundColor": "#ffffff"
