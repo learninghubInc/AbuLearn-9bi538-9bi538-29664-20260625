@@ -2,7 +2,7 @@
   "expo": {
     "name": "AbuLearn Academy",
     "slug": "abulearn-academmy",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./myapp.jpg",
     "scheme": "AbuLearn Academy",
@@ -12,7 +12,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.anonymous.onspaceapp",
+      "package": "com.anonymous.abulearnacademy",
       "adaptiveIcon": {
         "foregroundImage": "./myapp.jpg",
         "backgroundColor": "#ffffff"
