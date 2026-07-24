@@ -67,7 +67,7 @@ export default function Index() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Academy Brand Top Header Bar */}
-      <Text style={styles.headerTitle}>AbuLearn Academy</Text>
+      <Text style={styles.headerTitle}>AbuLearn Go</Text>
       <Text style={styles.headerSubtitle}>Premium Educational Hub</Text>
 
       {/* Course List Section */}
