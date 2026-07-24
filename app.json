@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "AbuLearn Academy",
-    "slug": "abulearn-academmy",
+    "name": "AbuLearn Go",
+    "slug": "abulearn-go",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./myapp.jpg",
-    "scheme": "AbuLearn Academy",
+    "scheme": "AbuLearn Go",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "package": "com.anonymous.abulearnacademy",
+      "package": "com.anonymous.AbuLearn Go",
       "adaptiveIcon": {
         "foregroundImage": "./myapp.jpg",
         "backgroundColor": "#ffffff"
